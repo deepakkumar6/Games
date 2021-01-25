@@ -1,8 +1,13 @@
 # Tic Tak Toe
+import random
+# import sys
+# from IPython.display import clear_output
 board = ["-" for i in range(9)]
 
 # display board
 def display_board():
+    # sys.stdout.flush()
+    # clear_output()
     print()
     print(' '*3,'|','---------','|',' '*3,' '*3,'|','---------','|')
     print(' '*3,'|',board[0]+' | '+board[1]+' | '+board[2],'|',' '*3,' '*3,'|','1'+' | '+'2'+' | '+'3','|')
@@ -40,7 +45,7 @@ def play_game():
 
     display_board();#initial board
 
-    curr_player = 'X'
+    curr_player = 'X' if random.randint(0,1)==1 else 'O'
 
     game_still_going = True
 
