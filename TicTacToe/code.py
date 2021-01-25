@@ -111,4 +111,4 @@ while try_again:
     board = ["-" for i in range(9)] # clean the board
 
 
-# @ code written by Deepak Kumar
+#Code is written by Deepak Kumar
