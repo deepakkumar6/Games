@@ -118,6 +118,7 @@ while run :
                         guessed.append(ltr)
                         if ltr not in word:
                             hangman_status+=1
+    draw()
     won = True
     for letter in word:
         if letter not in guessed:
