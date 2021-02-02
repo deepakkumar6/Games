@@ -5,13 +5,15 @@
 
 >> Tik Tac Toe
 
-   Install Latest Version of Python in your system .
+    Install the latest Version of Python in your system .
 
-   Clone The Repo using command -  git clone (link of repo)
+    Clone The Repo using command -  "git clone https://github.com/deepakkumar6/Games.git"
 
-   Run The code.py  using command prompt
+    Run the "code.py" using command prompt.
 
-   Play the Game
+    (The command used is -"python code.py")
+
+    Enjoy the Game
 
 
 
@@ -19,13 +21,15 @@
 
 >> Hangman
 
-    Install Latest Version of Python in your system .
+    Install the latest Version of Python in your system .
 
-    Clone The Repo using command -  git clone (link of repo)
+    Clone The Repo using command -  "git clone https://github.com/deepakkumar6/Games.git"
 
-    Run The code.py  using command prompt
+    Run The code.py  using command prompt.
 
-    Play the Game
+    (The command used is -"python code.py")
+
+    Enjoy the Game
 
 
 
@@ -33,12 +37,14 @@
 
 >> Hangman_pygame
 
-    Install Latest Version of Python in your system .
+    Install the latest Version of Python in your system .
 
     Go to cmd and install pygame using command -"pip install pygame"
 
-    Clone The Repo using command -  git clone (link of repo)
+    Clone The Repo using command -  "git clone https://github.com/deepakkumar6/Games.git"
 
-    Run The code.py using command prompt
+    Run The code.py  using command prompt.
 
-    Enjoy The Game
+    (The command used is -"python code.py")
+
+    Enjoy the Game
