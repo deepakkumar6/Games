@@ -55,11 +55,16 @@ clock = pygame.time.Clock()
 run = True
 
 def draw():
+
+
     # filling the color
     win.fill(WHITE)
+
+
     # draw Title
     text = TITLE_FONT.render("HANGMAN GAME",1,BLACK)
     win.blit(text,(WIDTH//2-text.get_width()//2,20))
+
 
     # draw word
     display_word = ""
