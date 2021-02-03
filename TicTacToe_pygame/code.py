@@ -2,32 +2,34 @@ import pygame
 import os
 import random
 
-pygame.init()
+pygame.init() # this step is must
 
 #initial setup display
-WIDTH,HEIGHT=300,300
+WIDTH,HEIGHT=1400,620
 win = pygame.display.set_mode((WIDTH,HEIGHT))
 
 
-
 # fonts
-LETTER_FONT = pygame.font.SysFont('comicsans',80)
+LETTER_FONT = pygame.font.SysFont("stencil",180)
+print(pygame.font.get_fonts())
 
 # board
 board_pic = pygame.image.load('board_pic.png')
 
-
+# color (R,G,B)
 BLACK = (0,0,0)
 WHITE = (255,255,255)
 RED = (255,0,0)
 
+# adjusting frame per second
 FPS = 60
 clock = pygame.time.Clock()
-[4]
 
-cell_pos = [[100, 100, 0, False, " "], [100, 200, 1, False, " "], [100, 300, 2, False, " "],\
-            [200, 100, 3, False, " "], [200, 200, 4, False, " "], [200, 300, 5, False, " "],\
-            [300, 100, 6, False, " "], [300, 200, 7, False, " "], [300, 300, 8, False, " "]]
+cell_pos = [[200, 200, 0, False, ' '], [200, 400, 1, False, ' '], [200, 600, 2, False, ' '],\
+            [400, 200, 3, False, ' '], [400, 400, 4, False, ' '], [400, 600, 5, False, ' '],\
+            [600, 200, 6, False, ' '], [600, 400, 7, False, ' '], [600, 600, 8, False, ' ']]
+
+
 
 
 
@@ -46,7 +48,9 @@ def draw():
         x,y,idx,vis,pyr=cell
         if vis:
             txt = LETTER_FONT.render(pyr,1,BLACK)
-            win.blit(txt,(x-75,y-75))
+            win.blit(txt,(x-155,y-150))
+    curr_player = LETTER_FONT.render(player,1,BLACK)
+    win.blit(curr_player,(1169, 238))
     pygame.display.update()
 
 # check game things
@@ -83,7 +87,7 @@ def display_message(message):
 
 
 def index(x,y,X,Y):
-    return x<=X and y<=Y
+    return X-200<=x<=X and Y-200<=y<=Y
 
 
 turn = 0
