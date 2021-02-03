@@ -1,17 +1,18 @@
 # Hangman Game by Deepak Kumar
 
-
 import pygame
 import os
 import math
 import random
+# importing some of words from the file named 'words.py'
 from words import word_list
-# from pic import *
+
+
 # initial setup display
 pygame.init()
 WIDTH,HEIGHT = 800,500
-win = pygame.display.set_mode((WIDTH,HEIGHT))
-pygame.display.set_caption('Hangman_pygame')# for display the caption of the game
+win = pygame.display.set_mode((WIDTH,HEIGHT)) # this is the main window
+pygame.display.set_caption('Hangman_pygame') # for display the caption of the game
 
 
 # button's pos
@@ -28,7 +29,11 @@ for i in range(26):
     letters.append([x,y,chr(ord('A')+i),True])
 
 
-# fonts
+# fonts and color
+
+WHITE = (255,255,255)
+BLACK = (0,0,0)
+RED = (255,0,0)
 LETTER_FONT = pygame.font.SysFont('comicsans',39)
 WORD_FONT = pygame.font.SysFont('comicsans',50)
 TITLE_FONT = pygame.font.SysFont('comicsans',50)
@@ -47,8 +52,6 @@ word = random.choice(word_list).upper()
 guessed = []
 
 
-WHITE = (255,255,255)
-BLACK = (0,0,0)
 # set up game loop
 FPS = 60 # fps -frame per second
 clock = pygame.time.Clock()
@@ -93,9 +96,11 @@ def draw():
 
 def display_message(message):
     pygame.time.delay(1000)
-    win.fill(WHITE)
+    win.fill(RED)
     text = WORD_FONT.render(message,1,BLACK)
     win.blit(text,(WIDTH//2-text.get_width()//2,HEIGHT//2-text.get_height()//2))
+    txt = WORD_FONT.render("The Word was : "+word,1,BLACK)
+    win.blit(txt,( 70 ,HEIGHT//2+5+text.get_height()//2))
     pygame.display.update()
     pygame.time.delay(3000)
 
