@@ -179,7 +179,7 @@ def Draw_Window(surface,grid,last_score,score=0):
     surface.blit(label,(sx+20,sy+160))
 
     # high score 
-    label = font.render('HIgh Score: '+str(score),1,BLACK)
+    label = font.render('HIgh Score: '+str(last_score),1,BLACK)
 
     sx = TOP_LEFT_X - 200 
     sy = TOP_LEFT_Y + 200
@@ -308,7 +308,9 @@ def Max_Score():
 
 def main(win):
 
-    last_score = Max_Score()
+    last_score = Max_Score( ) # print last score 
+
+    print(last_score)
 
     locked_position = {}
 
@@ -410,22 +412,28 @@ def main(win):
     
 
 
-
-
-        
-
-
 def main_menu(win):
+
     run = True 
+
     while run:
+
         win.fill(WHITE)
+
         Draw_Text_Middle(win,'Please Press Any Key to Play',60,BLACK)
+
         pygame.display.update()
+
         for event in pygame.event.get():
+
             if event.type == pygame.QUIT:
+
                 run = False 
-            if event.type == pygame.KEYDOWN:
+
+            if event.type == pygame.KEYDOWN:# press any ke
+                
                 main(win)
+
     pygame.display.quit()
 
 
