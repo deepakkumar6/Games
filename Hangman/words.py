@@ -1,3 +1,4 @@
+# This is the python list of 400 words 
 word_list = [
     'wares',
     'soup',

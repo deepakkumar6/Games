@@ -44,11 +44,11 @@ def draw():
     # print the curr state of Game
     for cell in cell_pos:
         x,y,idx,vis,pyr=cell
-        if vis:#show the "X" or "O" if it is visited 
+        if vis:#show the "X" or "O" if it is visited
             txt = LETTER_FONT.render(pyr,1,BLACK)
             win.blit(txt,(x-155,y-150))
 
-    # show the player's turn 
+    # show the player's turn
     curr_player = LETTER_FONT.render(player,1,BLACK)
     win.blit(curr_player,(1169, 238))
 
@@ -75,11 +75,11 @@ def check_if_game_over(board):
 
     return True
 
-# Display the New Screen 
+# Display the New Screen
 def display_message(message):
 
     pygame.time.delay(1000) # wait for 1s
-    win.fill(RED) # background  
+    win.fill(RED) # background
     text = LETTER_FONT.render(message,2,BLACK)
     win.blit(text,(WIDTH//2-text.get_width()//2,HEIGHT//2-text.get_height()//2)) # print at the middle
 
@@ -89,7 +89,7 @@ def display_message(message):
 
 
 def index(x,y,X,Y):
-    # check if the mouse pointer is incide the particular cell 
+    # check if the mouse pointer is incide the particular cell
     return X-200 <= x <= X and Y-200 <= y <= Y
 
 
@@ -101,21 +101,21 @@ while run:
 
     draw() # Draw the Game Board
 
-    for event in pygame.event.get(): # Right Top Cross Button 
+    for event in pygame.event.get(): # Right Top Cross Button
         if event.type == pygame.QUIT:
             run = False
 
         if event.type == pygame.MOUSEBUTTONDOWN:
-            m_x,m_y = pygame.mouse.get_pos() # mouse x,y position 
+            m_x,m_y = pygame.mouse.get_pos() # mouse x,y position
 
             # print(m_x,m_y)
 
             for cell in cell_pos:
                 x,y,idx,vis,pyr=cell
-                if not vis:# we can click if it is not visited 
+                if not vis:# we can click if it is not visited
                     if index(m_x,m_y,x,y):
-                        cell[3] = True # if true - print 
-                        cell[4] = player # assign the ptr of player 
+                        cell[3] = True # if true - print
+                        cell[4] = player # assign the ptr of player
                         player = 'X' if player =='O' else 'O' # switch player
                         turn += 1
                         break
@@ -126,14 +126,15 @@ while run:
     if not won:
         pygame.time.delay(1000) # wait for 1s
         player = 'X' if player =='O' else 'O' # we flipped here because we already flip the player in adv(line 119)
+
         display_message('{} WON!'.format(player))
         run = False
         break
 
     if turn == 9:
         pygame.time.delay(1000) # wait for 1s
-        display_message('Tie') # Game Tie 
-        run = False 
+        display_message('Tie') # Game Tie
+        run = False
         break
 
 

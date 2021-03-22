@@ -1,6 +1,5 @@
-
+# importing modules 
 import random
-
 from words import word_list
 
 
@@ -11,13 +10,13 @@ def get_word():
     # idx = random.randint(0,n-1)# index are from 0-(n-1)
     # word = word_list[idx]
 
-    word = word.upper() # lowercase to uppercase
+    word = word.upper() # converting to uppercase
 
     return word
 
 def play(word):
 
-    word_completion = '*'*len(word) # this is the incomplete will show at each stage
+    word_completion = '*'*len(word) # this is the incomplete word will be display at each stage
 
     guessed = False # flag for guessed or not
 
@@ -25,11 +24,11 @@ def play(word):
 
     guessed_word = [] # to store the guessed word till now
 
-    tries = 6 # we have 6 life line
+    tries = 6 # no of life line
 
-    print('Lets Play The Hangman') # ok Lets start
+    print("Let's Play The Hangman") # ok Lets start
 
-    print(Hangman(tries)) # stage of hangman
+    print(Hangman(tries)) # Print stages of Hangman
 
     print(word_completion)
 
@@ -50,7 +49,7 @@ def play(word):
 
                 print(guess,"is not in the word.")
 
-                tries -=1
+                tries -= 1
 
                 guessed_letter.append(guess)
 
@@ -61,7 +60,8 @@ def play(word):
 
                 word_as_list = list(word_completion) # spliting the string into list
 
-                indices = [idx for idx,letter in enumerate(word) if letter == guess] # this will show all the occurance in word_completion
+                indices = [idx for idx,letter in enumerate(word) if letter == guess] 
+                # this will show all the occurance in word_completion
 
                 for index in indices:
                     word_as_list[index] = guess
@@ -91,11 +91,14 @@ def play(word):
 
         else:
             print('uff.. Not a valid guess')
-            print('Extra Hint - Be Careful with extra white splace')
+            print('Extra Hint - Be Careful with extra white spaces')
 
         print(Hangman(tries))
+
         print(word_completion)
+
         print()
+
     if guessed:
         print('Congrats , you guessed the word! , You win!')
     else:
@@ -192,6 +195,9 @@ def main():
 if __name__=='__main__':
 
     main()
+
+
+# Created By the Deepak Kumar 
 
 
 
