@@ -23,13 +23,19 @@
 
     Install the latest Version of Python in your system .
 
+    You can also follow this Video : https://youtu.be/UvcQlPZ8ecA for installation.
+
+    Open the command Prompt .
+
     Clone The Repo using command -  "git clone https://github.com/deepakkumar6/Games.git"
 
-    Run The code.py  using command prompt.
+    Change Directory to Game , Use command - "cd Games"
 
-    (The command used is -"python code.py")
+    Change Directory to the Hangman directory , use command - "cd Hangman"
 
-    Enjoy the Game
+    Run The code.py  using command prompt , use command - "python code.py"
+
+    Enjoy the Game :)
 
 
 
